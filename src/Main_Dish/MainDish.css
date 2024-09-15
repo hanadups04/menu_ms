@@ -1,0 +1,7 @@
+.mainContent {
+    background-color: yellow;
+    display: flex;
+    padding: 10px;
+    justify-content: center;
+  }
+  
