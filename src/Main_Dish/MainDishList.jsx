@@ -3,6 +3,11 @@ import "./MainDishList.css";
 import MenuTemplate from "../MenuTemplate";
 
 export default function MainDishList({ products, onAddToCart }) {
+  console.log(products);
+  const filteredMain = products.filter(
+    (item) => item.menuCategory === "MainDish"
+  );
+  console.log(filteredMain);
   return (
     <>
       <div className="mainDishCont">
@@ -11,12 +16,12 @@ export default function MainDishList({ products, onAddToCart }) {
         </div>
 
         <div className="mainDishList">
-          {products.map((product, key) => (
+          {filteredMain.map((product, key) => (
             <MenuTemplate
               key={key}
-              name={product.name}
-              price={product.price}
-              imageUrl={product.imageUrl}
+              name={product.menuItem}
+              price={product.menuPrice}
+              imageUrl={product.menuImage}
               onAddToCart={() => onAddToCart(product)}
             />
           ))}

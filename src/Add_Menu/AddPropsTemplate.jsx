@@ -12,7 +12,7 @@ export default function AddPropsTemplate(prop) {
           value={prop.value}
           onChange={prop.onChange}
         />
-        <label for="floatingInput">{prop.desc}</label>
+        <label htmlFor="floatingInput">{prop.desc}</label>
       </div>
     </>
   );

@@ -1,4 +1,4 @@
 .card{
     width: 20%;
-    height: 30vh;
+    height: fit-content;
 }

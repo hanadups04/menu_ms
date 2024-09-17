@@ -6,16 +6,17 @@ import "./AddMenu.css";
 export default function AddMenu({ addMenu }) {
   const [menuItem, setMenuItem] = useState("");
   const [menuPrice, setMenuPrice] = useState("");
-  const [menuCategory, setMenuCategory] = useState("Main Dish");
+  const [menuCategory, setMenuCategory] = useState("MainDish");
   const [menuImage, setMenuImage] = useState(null);
 
   const handleSubmit = (e) => {
     e.preventDefault();
     const newMenu = { menuItem, menuPrice, menuCategory, menuImage };
     addMenu(newMenu);
+    console.log(newMenu);
     setMenuItem("");
     setMenuPrice("");
-    setMenuCategory("");
+    setMenuCategory("MainDish");
     setMenuImage(null);
   };
 
@@ -67,7 +68,7 @@ export default function AddMenu({ addMenu }) {
               </select>
 
               <div class="mb-3">
-                <label for="formFile" class="form-label">
+                <label htmlFor="formFile" class="form-label">
                   <br></br>
                   <h5>UPLOAD MENU ITEM IMAGE</h5>
                 </label>
