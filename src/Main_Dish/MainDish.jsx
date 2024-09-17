@@ -1,12 +1,12 @@
 import React from "react";
+import MainDishList from "./MainDishList";
 import "./MainDish.css";
-import mainDishList from "./MainDishList.jsx";
 
-export default function MainDish() {
+export default function MainDish({ items }) {
   return (
     <>
       <div className="mainContent">
-        <mainDishList />
+        <MainDishList products={items} />
       </div>
     </>
   );

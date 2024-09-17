@@ -9,8 +9,8 @@ export default function AddPropsTemplate(prop) {
           class="form-control"
           id="floatingInput"
           name={prop.name}
-          //   value={prop.value}
-          //   onChange={prop.onChange}
+          value={prop.value}
+          onChange={prop.onChange}
         />
         <label for="floatingInput">{prop.desc}</label>
       </div>

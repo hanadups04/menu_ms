@@ -1,17 +1,18 @@
 import React from "react";
+import "./MenuTemplate.css";
 
-export default function MenuTemplate() {
+export default function MenuTemplate({ name, price, imageUrl, onAddToCart }) {
   return (
     <>
       <div>
         <div class="card">
-          <img src="" class="card-img-top" alt="" />
+          {imageUrl && <img src={imageUrl} class="card-img-top" alt="nigger" />}
           <div class="card-body">
-            <h5 class="card-title">Menu Item Name</h5>
-            <p class="card-text">Price</p>
-            <a href="#" class="btn btn-primary">
+            <h5 class="card-title">{name}</h5>
+            <p class="card-text">Price: P {price}</p>
+            <button className="btn btn-primary" onClick={onAddToCart}>
               Add to Cart
-            </a>
+            </button>
           </div>
         </div>
       </div>

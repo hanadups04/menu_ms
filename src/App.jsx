@@ -9,6 +9,12 @@ import AddMenu from "./Add_Menu/AddMenu";
 import "./App.css";
 
 function App() {
+  const [items, setItems] = useState([]);
+
+  const addItem = (item) => {
+    setItems((prevItems) => [...prevItems, item]);
+  };
+
   return (
     <>
       <div class="body bg-custom vh-100">
@@ -56,11 +62,11 @@ function App() {
           </nav>
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/mainDish" element={<MainDish />} />
+            <Route path="/mainDish" element={<MainDish items={items} />} />
             <Route path="/sideDish" element={<SideDish />} />
             <Route path="/desserts" element={<Desserts />} />
             <Route path="/drinks" element={<Drinks />} />
-            <Route path="/addMenu" element={<AddMenu />} />
+            <Route path="/addMenu" element={<AddMenu addMenu={addItem} />} />
           </Routes>
         </Router>
       </div>
